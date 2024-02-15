@@ -1,0 +1,11 @@
+name : Pipeline 
+on : [push,pull_request]
+
+
+jobs :
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name : teste copia 
+        run : echo $(pwd)
