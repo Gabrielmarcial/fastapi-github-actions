@@ -1,14 +1,15 @@
-name : Pipeline 
-on : [push,pull_request]
+name: Pipeline
+on:
+  - push
+  - pull_request
 
-
-jobs :
+jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Copia os arquivos do repo
         uses: actions/checkout@v4
-      
-      - name: verificando os arquivos
-        uses: echo $(ls)
+
+      - name: Verificando os arquivos
+        run: echo $(ls)
