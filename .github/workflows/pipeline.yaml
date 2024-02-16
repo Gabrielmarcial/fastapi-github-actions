@@ -11,5 +11,7 @@ jobs:
       - name: Copia os arquivos do repo
         uses: actions/checkout@v4
 
-      - name: Verificando os arquivos
-        run: echo $(ls)
+      - name: instalar o python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10.12'
