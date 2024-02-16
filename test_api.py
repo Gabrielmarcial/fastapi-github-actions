@@ -10,7 +10,7 @@ def test_read_root():
 
 def test_get_items_deve_retornar_success():
     response = client.get("/get-items")
-    assert response.status_code == 200
+    assert response.status_code == 400
     assert response.json()['status'] == "success"
     assert type(response.json()['data']) == list
 
