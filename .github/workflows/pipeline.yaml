@@ -8,7 +8,7 @@ jobs :
 
     steps:
       - name: Copia os arquivos do repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: verificando os arquivos
         uses: echo $(ls)
