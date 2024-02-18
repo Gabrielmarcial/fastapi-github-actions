@@ -36,3 +36,16 @@ class ConexaoPostgreSQL:
         except Exception as e:
             print(f"Erro ao desconectar do banco de dados: {e}")
 
+class ConsultaEletronicos:
+    def __init__(self, conexao):
+        self.conexao = conexao
+
+    def buscar_itens(self):
+        try:
+            query = "SELECT nome, marca, modelo, preco FROM eletronicos"
+            self.conexao.cursor.execute(query)
+            resultados = self.conexao.cursor.fetchall()
+            return resultados
+        except Exception as e:
+            print(f"Erro ao buscar itens na tabela eletronicos: {e}")
+            return None
