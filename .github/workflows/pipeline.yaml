@@ -21,6 +21,10 @@ jobs:
       - name: Copia os arquivos do repo
         uses: actions/checkout@v4
 
+      - name: Executar script SQL
+        run: |
+          psql -h localhost -U postgres -d postgres -f database.sql
+
       - name: instalar o python
         uses: actions/setup-python@v4
         with:
