@@ -21,6 +21,8 @@ jobs:
       - name: Copia os arquivos do repo
         uses: actions/checkout@v4
 
+      - name: Atraso antes de executar o script SQL
+        run: sleep 10
       - name: Executar script SQL
         run: PGPASSWORD=app_password psql -h localhost -U postgres -d postgres -f database.sql
 
